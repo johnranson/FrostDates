@@ -4,12 +4,12 @@
 import csv, argparse, re
 
 parser = argparse.ArgumentParser()
-parser.add_argument("infile")
+parser.add_argument("filename", help="CSV Annual/Seasonal climate normal file from NOAA")
 args = parser.parse_args()
 
 print()
 
-with open(args.infile) as f:
+with open(args.filename) as f:
     reader = csv.DictReader(f)
     for row in reader:
         print('Location:', row['NAME'])
